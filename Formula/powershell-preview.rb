@@ -33,8 +33,9 @@ class PowershellPreview < Formula
     url :head
   end
 
-  # .NET Core 3.1 requires High Sierra - https://docs.microsoft.com/en-us/dotnet/core/install/dependencies?pivots=os-macos&tabs=netcore31
-  depends_on macos: :high_sierra
+  # .NET 10 RC 1 shipped with macOS 14 (Sonoma) as the minimum supported OS
+  # https://github.com/dotnet/core/blob/v10.0.0-rc.1/release-notes/10.0/supported-os.md#apple
+  depends_on macos: :sonoma
 
   def install
     libexec.install Dir["*"]

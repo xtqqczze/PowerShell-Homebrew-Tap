@@ -29,8 +29,9 @@ class PowershellLts < Formula
   version "7.4.11"
   version_scheme 1
 
-  # .NET Core 3.1 requires High Sierra - https://docs.microsoft.com/en-us/dotnet/core/install/dependencies?pivots=os-macos&tabs=netcore31
-  depends_on macos: :high_sierra
+  # .NET 8 RC 1 shipped with macOS 10.15 (Catalina) as the minimum supported OS
+  # https://github.com/dotnet/core/blob/v8.0.0-rc.1/release-notes/8.0/supported-os.md#apple
+  depends_on macos: :catalina
 
   def install
     libexec.install Dir["*"]
